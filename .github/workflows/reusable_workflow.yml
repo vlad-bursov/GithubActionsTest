@@ -36,6 +36,7 @@ jobs:
       - name: Print the input name to STDOUT
         run: |
           echo Hello, ${{ inputs.username }}
+          echo ${{ env.SOME_ENV_SECRET }}
 
   set-outputs:
     runs-on: ubuntu-latest
