@@ -22,3 +22,6 @@ jobs:
         run: echo "Upload to Play Market"
       - name: Finish
         run: echo "Finish uploading"
+      - name: Print env
+        run: echo {{ $env.user_name_updated }}
+
