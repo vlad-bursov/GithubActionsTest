@@ -21,6 +21,8 @@ on:
 jobs:
   set-env:
     runs-on: ubuntu-latest
+    environment:
+      name: production
     env:
       SOME_ENVIREMENT_ENV: 1234
     steps:
