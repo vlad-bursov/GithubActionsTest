@@ -16,4 +16,6 @@ jobs:
     steps:
       - name: Print the input name to STDOUT
         run: echo Hello, ${{ inputs.username }}.
+      - name: Set the value to env
+        run: echo "user_name_updated=Updated user" >> $GITHUB_ENV
 
