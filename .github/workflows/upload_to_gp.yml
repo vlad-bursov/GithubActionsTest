@@ -18,5 +18,7 @@ jobs:
       - name: Upload
         run: echo "Upload to Play Market"
       - name: Finish
-        run: echo "Finish uploading"
+        run: |
+          echo "Finish uploading"
+          printenv
 

@@ -19,12 +19,19 @@ on:
         value: ${{ jobs.set-outputs.outputs.output2 }}
 
 jobs:
+  set-env:
+    runs-on: ubuntu-latest
+    env:
+      SOME_ENVIREMENT_ENV: 1234
+
   print-inputs:
     runs-on: ubuntu-latest
 
     steps:
       - name: Print the input name to STDOUT
-        run: echo Hello, ${{ inputs.username }}
+        run: |
+          echo Hello, ${{ inputs.username }}
+          printenv
 
   set-outputs:
     runs-on: ubuntu-latest
