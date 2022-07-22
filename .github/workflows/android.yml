@@ -14,5 +14,9 @@ jobs:
     steps:
     - name: Checkout from git
       uses: actions/checkout@v3
-    - name: Build with Gradle
-      run: ./gradlew build
+    - name: Build
+      run: echo "Build step"
+    - name: Upload
+      run: echo "Upload step
+    - name: Finish
+      run: echo "Finish step"
