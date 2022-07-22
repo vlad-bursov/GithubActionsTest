@@ -1,22 +1,28 @@
-name: Android CI
+name: Android CI(reusable work flow)
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  workflow_call:
+    inputs:
+      username:
+        description: 'A username passed from the caller workflow'
+        default: 'john-doe'
+        required: false
+        type: string
 
 jobs:
-  build:
-
+  print-username:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout from git
-      uses: actions/checkout@v3
-    - name: Build
-      run: echo "Build step"
-    - name: Upload
-      run: echo "Upload step"
-    - name: Finish
-      run: echo "Finish step"
+      - name: Print the input name to STDOUT
+        run: echo Hello, ${{ inputs.username }}.
+
+  build-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: echo "Build step"
+      - name: Upload
+        run: echo "Upload step"
+      - name: Finish
+        run: echo "Finish step"

@@ -1,0 +1,24 @@
+name: Upload to App Gallery
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  call-workflow-passing-data:
+    uses: GitGubActionsApp/.github/workflows/android.yml@main
+    with:
+      username: Vlodos
+
+  upload:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Upload
+        run: echo "Upload to Play Market"
+      - name: Finish
+        run: echo "Finish uploading"
