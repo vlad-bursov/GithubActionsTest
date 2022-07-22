@@ -23,5 +23,5 @@ jobs:
       - name: Finish
         run: echo "Finish uploading"
       - name: Print env
-        run: echo {{ $env.user_name_updated }}
+        run: echo ${{ env.user_name_updated }}
 
