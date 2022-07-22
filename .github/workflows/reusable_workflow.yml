@@ -9,13 +9,31 @@ on:
         required: false
         type: string
 
+    # Map the workflow outputs to job outputs
+    outputs:
+      first:
+        description: "The first output string"
+        value: ${{ jobs.set-outputs.outputs.output1 }}
+      second:
+        description: "The second output string"
+        value: ${{ jobs.set-outputs.outputs.output2 }}
+
 jobs:
-  print-username:
+  print-inputs:
     runs-on: ubuntu-latest
 
     steps:
       - name: Print the input name to STDOUT
-        run: echo Hello, ${{ inputs.username }}.
-      - name: Set the value to env
-        run: echo "user_name_updated=Updated" >> $GITHUB_ENV
+        run: echo Hello, ${{ inputs.username }}
 
+  set-outputs:
+    runs-on: ubuntu-latest
+    # Map the job outputs to step outputs
+    outputs:
+      output1: ${{ steps.step1.outputs.first }}
+      output2: ${{ steps.step2.outputs.second }}
+    steps:
+      - id: step1
+        run: echo "::set-output name=firstword::Hello"
+      - id: step2
+        run: echo "::set-output name=second::Alexei"

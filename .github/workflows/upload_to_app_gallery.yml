@@ -12,7 +12,7 @@ jobs:
       username: Vlodos
 
   upload:
-
+    needs: call-workflow-passing-data
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +20,6 @@ jobs:
         run: echo "Upload to Play Market"
       - name: Finish
         run: echo "Finish uploading"
-      - name: Print env
-        run: echo Updated env is ${{ env.user_name_updated }}
+      - name: Print outputs
+        run: echo ${{ needs.call-workflow-passing-data.outputs.first }}, ${{ needs.call-workflow-passing-data.outputs.second }}
 
