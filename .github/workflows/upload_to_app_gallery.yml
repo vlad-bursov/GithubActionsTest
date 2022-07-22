@@ -9,7 +9,7 @@ on:
 jobs:
 
   call-workflow-passing-data:
-    uses: GitGubActionsApp/.github/workflows/android.yml@main
+    uses: vlad-bursov/GitGubActionsApp/.github/workflows/android.yml@main
     with:
       username: Vlodos
 
