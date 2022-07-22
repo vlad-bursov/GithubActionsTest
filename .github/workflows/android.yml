@@ -17,6 +17,6 @@ jobs:
     - name: Build
       run: echo "Build step"
     - name: Upload
-      run: echo "Upload step
+      run: echo "Upload step"
     - name: Finish
       run: echo "Finish step"
