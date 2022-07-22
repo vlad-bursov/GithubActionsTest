@@ -17,12 +17,3 @@ jobs:
       - name: Print the input name to STDOUT
         run: echo Hello, ${{ inputs.username }}.
 
-  build-app:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build
-        run: echo "Build step"
-      - name: Upload
-        run: echo "Upload step"
-      - name: Finish
-        run: echo "Finish step"
