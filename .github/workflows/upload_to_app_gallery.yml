@@ -23,5 +23,5 @@ jobs:
       - name: Finish
         run: echo "Finish uploading"
       - name: Print env
-        run: echo Updated env is ${{ GITHUB_ENV.user_name_updated }}
+        run: echo Updated env is ${{ $GITHUB_ENV.user_name_updated }}
 
